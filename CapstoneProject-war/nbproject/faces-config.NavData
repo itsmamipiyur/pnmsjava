@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="pages/DishPage.jsp" x="1068" y="231" zoom="false"/>
+        <Node id="pages/AdminMenu.jsp" x="1074" y="44" zoom="false"/>
+        <Node id="index.jsp" x="156" y="68" zoom="true"/>
+        <Node id="pages/NewDecor.jsp" x="378" y="484" zoom="false"/>
+        <Node id="Page1.jsp" x="158" y="103" zoom="true"/>
+        <Node id="pages/NewDish.jsp" x="147" y="150" zoom="false"/>
+        <Node id="pages/ItemPage.jsp" x="426" y="108" zoom="true"/>
+        <Node id="pages/DecorPage.jsp" x="393" y="355" zoom="false"/>
+        <Node id="pages/DishTypePage.jsp" x="630" y="135" zoom="false"/>
+        <Node id="pages/EventTypePage.jsp" x="663" y="253" zoom="false"/>
+        <Node id="pages/NewItemType.jsp" x="103" y="405" zoom="true"/>
+        <Node id="pages/NewDishType.jsp" x="130" y="505" zoom="false"/>
+        <Node id="pages/NewItemPage.jsp" x="270" y="253" zoom="true"/>
+        <Node id="pages/NewEventTypePage.jsp" x="901" y="447" zoom="false"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
