@@ -16,19 +16,23 @@
                     <webuijsf:form id="form1">
                         <webuijsf:button actionExpression="#{pages$ItemPage.btnNew_action}" id="btnNew"
                             style="left: 167px; top: 168px; position: absolute; width: 96px" text="New Item"/>
-                        <webuijsf:table augmentTitle="false" id="table1" style="left: 168px; top: 192px; position: absolute" title="Table" width="600">
+                        <webuijsf:table augmentTitle="false" id="table1" style="left: 168px; top: 192px; position: absolute" title="Table" width="609">
                             <webuijsf:tableRowGroup id="tableRowGroup1" rows="10" sourceData="#{SessionBean1.itemArr}" sourceVar="currentRow">
-                                <webuijsf:tableColumn headerText="itemCode" id="tableColumn1" sort="itemCode">
-                                    <webuijsf:staticText id="staticText1" text="#{currentRow.value['itemCode']}"/>
-                                </webuijsf:tableColumn>
-                                <webuijsf:tableColumn headerText="itemName" id="tableColumn2" sort="itemName">
+                                <webuijsf:tableColumn headerText="Name" id="tableColumn2" sort="itemName" width="209">
                                     <webuijsf:staticText id="staticText2" text="#{currentRow.value['itemName']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn headerText="itemDesc" id="tableColumn3" sort="itemDesc">
+                                <webuijsf:tableColumn headerText="Description" id="tableColumn3" sort="itemDesc">
                                     <webuijsf:staticText id="staticText3" text="#{currentRow.value['itemDesc']}"/>
+                                </webuijsf:tableColumn>
+                                <webuijsf:tableColumn headerText="Update" id="tableColumn4" width="200">
+                                    <webuijsf:button id="button1" text="Update"/>
+                                </webuijsf:tableColumn>
+                                <webuijsf:tableColumn headerText="Delete" id="tableColumn5" width="200">
+                                    <webuijsf:button id="button2" text="Delete"/>
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
+                        <webuijsf:staticText id="staticText4" style="font-size: 36px; font-weight: bold; left: 432px; top: 72px; position: absolute" text="ITEM"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

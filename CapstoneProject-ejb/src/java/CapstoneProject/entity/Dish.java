@@ -63,6 +63,8 @@ public class Dish implements Serializable {
         return dishTypeName;
     }
 
+
+
     public void setDishTypeName(String dishTypeName) {
         this.dishTypeName = dishTypeName;
     }
@@ -151,6 +153,8 @@ public class Dish implements Serializable {
         }
         return true;
     }
+
+
 
     @Override
     public String toString() {

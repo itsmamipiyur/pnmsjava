@@ -5,11 +5,14 @@
 
 package capstoneprojectwar;
 
+import CapstoneProject.entity.CateringPackage;
 import CapstoneProject.entity.Decor;
 import CapstoneProject.entity.Dish;
 import CapstoneProject.entity.DishType;
 import CapstoneProject.entity.EventType;
 import CapstoneProject.entity.Item;
+import CapstoneProject.entity.ItemType;
+import CapstoneProject.entity.RentalPackage;
 import com.sun.rave.web.ui.appbase.AbstractSessionBean;
 import javax.faces.FacesException;
 
@@ -46,6 +49,42 @@ public class SessionBean1 extends AbstractSessionBean {
     Decor[] decorArr;
     DishType[] dishTypeArr;
     Dish[] dishArr;
+    ItemType itemType;
+    CateringPackage[] cateringPackageArr;
+    RentalPackage[] rentalPackageArr;
+
+
+    public Decor[] getDecorArr() {
+        return decorArr;
+    }
+
+    public void setDecorArr(Decor[] decorArr) {
+        this.decorArr = decorArr;
+    }
+
+    public RentalPackage[] getRentalPackageArr() {
+        return rentalPackageArr;
+    }
+
+    public void setRentalPackageArr(RentalPackage[] rentalPackageArr) {
+        this.rentalPackageArr = rentalPackageArr;
+    }
+
+    public CateringPackage[] getCateringPackageArr() {
+        return cateringPackageArr;
+    }
+
+    public void setCateringPackageArr(CateringPackage[] cateringPackageArr) {
+        this.cateringPackageArr = cateringPackageArr;
+    }
+
+    public ItemType getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
+    }
 
     public Dish[] getDishArr() {
         return dishArr;
@@ -63,13 +102,7 @@ public class SessionBean1 extends AbstractSessionBean {
         this.dishTypeArr = dishTypeArr;
     }
 
-    public Decor[] getDecorArr() {
-        return decorArr;
-    }
 
-    public void setDecorArr(Decor[] decorArr) {
-        this.decorArr = decorArr;
-    }
 
     public EventType[] getEventTypeArr() {
         return eventTypeArr;

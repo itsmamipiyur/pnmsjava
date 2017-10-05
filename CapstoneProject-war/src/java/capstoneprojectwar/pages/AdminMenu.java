@@ -6,6 +6,7 @@
 package capstoneprojectwar.pages;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.PanelLayout;
 import javax.faces.FacesException;
 import capstoneprojectwar.SessionBean1;
 import capstoneprojectwar.RequestBean1;
@@ -140,34 +141,53 @@ public class AdminMenu extends AbstractPageBean {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
 
-    public String btnItem_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return "itemPage";
-    }
-
-    public String btnEventType_action() {
+    public String eventType_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "eventTypePage";
     }
 
-    public String btnDecor_action() {
+    public String decor_action() {
         // TODO: Process the action. Return value is a navigation
+
         // case name where null will return to the same page.
         return "decorPage";
     }
 
-    public String btnDishType_action() {
+    public String item_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "itemPage";
+    }
+
+    public String dishType_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "dishTypePage";
     }
 
-    public String btnDish_action() {
+    public String dish_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return "dishPage";
+    }
+
+    public String cateringPackage_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "cateringPackagePage";
+    }
+
+    public String rentalPackage_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "rentalPackagePage";
+    }
+
+    public String delivery_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return "deliveryPage";
     }
     
 }

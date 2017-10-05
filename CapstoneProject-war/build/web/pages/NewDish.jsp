@@ -14,20 +14,23 @@
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <webuijsf:form id="form1">
-                        <webuijsf:staticText id="staticText1" style="font-size: 36px; font-weight: bold; left: 360px; top: 48px; position: absolute" text="New Dish"/>
+                        <webuijsf:staticText id="staticText1" style="font-size: 36px; font-weight: bold; left: 360px; top: 0px; position: absolute" text="New Dish"/>
                         <webuijsf:label id="label1" requiredIndicator="true" style="left: 240px; top: 120px; position: absolute" text="Type:"/>
                         <webuijsf:dropDown binding="#{pages$NewDish.ddDishType}" id="ddDishType" items="#{pages$NewDish.ddDishTypeDefaultOptions.options}"
-                            style="left: 336px; top: 120px; position: absolute" width="250"/>
+                            style="left: 336px; top: 120px; position: absolute" valueChangeListenerExpression="#{pages$NewDish.ddDishType_processValueChange}" width="250"/>
                         <webuijsf:label id="label2" requiredIndicator="true" style="left: 240px; top: 144px; position: absolute" text="Name:"/>
-                        <webuijsf:textField columns="50" id="textField1" style="left: 336px; top: 144px; position: absolute"/>
+                        <webuijsf:textField binding="#{pages$NewDish.textField1}" columns="50" id="textField1" style="left: 336px; top: 144px; position: absolute"/>
                         <webuijsf:label id="label3" style="left: 240px; top: 168px; position: absolute" text="Description:"/>
-                        <webuijsf:textArea columns="50" id="textArea1" rows="4" style="left: 336px; top: 168px; position: absolute"/>
+                        <webuijsf:textArea binding="#{pages$NewDish.textArea1}" columns="50" id="textArea1" rows="4" style="left: 336px; top: 168px; position: absolute"/>
                         <webuijsf:label id="label4" requiredIndicator="true" style="left: 240px; top: 264px; position: absolute" text="Price (per pax):"/>
-                        <webuijsf:textField id="textField2" style="left: 336px; top: 264px; position: absolute"/>
+                        <webuijsf:textField binding="#{pages$NewDish.textField2}" id="textField2" style="left: 336px; top: 264px; position: absolute"/>
                         <webuijsf:button actionExpression="#{pages$NewDish.btnSubmit_action}" id="btnSubmit"
                             style="height: 24px; left: 359px; top: 312px; position: absolute; width: 71px" text="Submit"/>
                         <webuijsf:button actionExpression="#{pages$NewDish.btnBack_action}" id="btnBack"
                             style="height: 24px; left: 455px; top: 312px; position: absolute; width: 72px" text="Back"/>
+                        <webuijsf:label id="label5" style="left: 240px; top: 96px; position: absolute" text="Code:"/>
+                        <webuijsf:textField binding="#{pages$NewDish.txtID}" disabled="true" id="txtID" style="left: 336px; top: 96px; position: absolute"/>
+                        <webuijsf:messageGroup id="messageGroup1" style="left: 24px; top: 120px; position: absolute"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

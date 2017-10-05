@@ -32,6 +32,7 @@
                         </webuijsf:table>
                         <webuijsf:button actionExpression="#{pages$EventTypePage.btnNew_action}" id="btnNew"
                             style="height: 24px; left: 191px; top: 192px; position: absolute; width: 120px" text="New Event Type"/>
+                        <webuijsf:staticText id="staticText3" style="font-size: 36px; font-weight: bold; left: 384px; top: 96px; position: absolute" text="EVENT TYPE"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

@@ -8,13 +8,16 @@ package capstoneprojectwar.pages;
 import CapstoneProject.entity.EventType;
 import CapstoneProject.session.EventTypeFacadeLocal;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.TextArea;
 import com.sun.webui.jsf.component.TextField;
 import javax.ejb.EJB;
 import javax.faces.FacesException;
 import capstoneprojectwar.SessionBean1;
 import capstoneprojectwar.RequestBean1;
 import capstoneprojectwar.ApplicationBean1;
+import java.util.Date;
 import java.util.List;
+import javax.ejb.EJBException;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -48,6 +51,24 @@ public class NewEventTypePage extends AbstractPageBean {
 
     public void setTxtID(TextField tf) {
         this.txtID = tf;
+    }
+    private TextField textField1 = new TextField();
+
+    public TextField getTextField1() {
+        return textField1;
+    }
+
+    public void setTextField1(TextField tf) {
+        this.textField1 = tf;
+    }
+    private TextArea textArea1 = new TextArea();
+
+    public TextArea getTextArea1() {
+        return textArea1;
+    }
+
+    public void setTextArea1(TextArea ta) {
+        this.textArea1 = ta;
     }
 
     // </editor-fold>
@@ -163,6 +184,31 @@ public class NewEventTypePage extends AbstractPageBean {
     public String btnSubmit_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
+        String name = "";
+        String desc = (String) this.textArea1.getText();
+        String code = (String) this.txtID.getText();
+        Date dt = new Date();
+
+        try{
+            name = (String) this.textField1.getText();
+
+            EventType eventType = new EventType();
+            eventType.setEventTypeCode(code);
+            eventType.setEventTypeName(name);
+            eventType.setEventTypeDesc(desc);
+            eventType.setCreatedAt(dt);
+            eventType.setUpdatedAt(dt);
+            this.eventTypeFacade.create(eventType);
+
+            this.info("Created successfully.");
+            this.textField1.setText("");
+            this.textArea1.setText("");
+        }catch (NullPointerException e){
+            this.info("Fields with * are mandatory.");
+        }catch (EJBException ex){
+            this.info("Name already exists; or");
+            this.info("Please try again.");
+        }
         return null;
     }
 

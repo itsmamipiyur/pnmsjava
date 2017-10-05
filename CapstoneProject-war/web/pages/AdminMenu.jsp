@@ -13,16 +13,26 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
-                    <webuijsf:button actionExpression="#{pages$AdminMenu.btnEventType_action}" id="btnEventType"
-                        style="height: 24px; left: -1px; top: 24px; position: absolute; width: 192px" text="Event Type"/>
                     <webuijsf:form id="form1">
-                        <webuijsf:button actionExpression="#{pages$AdminMenu.btnDish_action}" id="btnDish"
-                            style="height: 23px; left: -1px; top: 96px; position: absolute; width: 192px" text="Dish"/>
-                        <webuijsf:button actionExpression="#{pages$AdminMenu.btnItem_action}" id="btnItem" style="height: 24px; width: 192px" text="Item"/>
-                        <webuijsf:button actionExpression="#{pages$AdminMenu.btnDishType_action}" id="btnDishType"
-                            style="height: 24px; left: -1px; top: 72px; position: absolute; width: 191px" text="Dish Type"/>
-                        <webuijsf:button actionExpression="#{pages$AdminMenu.btnDecor_action}" id="btnDecor"
-                            style="height: 24px; left: -1px; top: 48px; position: absolute; width: 191px" text="Decor"/>
+                        <webuijsf:hyperlink actionExpression="#{pages$AdminMenu.eventType_action}" id="eventType"
+                            style="font-size: 18px; left: 0px; top: 192px; position: absolute" text="EventType"/>
+                        <webuijsf:hyperlink actionExpression="#{pages$AdminMenu.item_action}" id="item"
+                            style="font-size: 18px; left: 0px; top: 96px; position: absolute" text="Item"/>
+                        <webuijsf:hyperlink actionExpression="#{pages$AdminMenu.decor_action}" id="decor"
+                            style="font-size: 18px; left: 0px; top: 216px; position: absolute" text="Decor"/>
+                        <webuijsf:hyperlink actionExpression="#{pages$AdminMenu.dishType_action}" id="dishType"
+                            style="font-size: 18px; left: 0px; top: 120px; position: absolute" text="Dish Type"/>
+                        <webuijsf:hyperlink actionExpression="#{pages$AdminMenu.dish_action}" id="dish"
+                            style="font-size: 18px; left: 0px; top: 144px; position: absolute" text="Dish"/>
+                        <webuijsf:hyperlink actionExpression="#{pages$AdminMenu.cateringPackage_action}" id="cateringPackage"
+                            style="font-size: 18px; left: 0px; top: 168px; position: absolute" text="Catering Package"/>
+                        <webuijsf:hyperlink actionExpression="#{pages$AdminMenu.rentalPackage_action}" id="rentalPackage"
+                            style="font-size: 18px; left: 0px; top: 240px; position: absolute" text="Rental Package"/>
+                        <webuijsf:hyperlink actionExpression="#{pages$AdminMenu.delivery_action}" id="delivery"
+                            style="font-size: 18px; left: 0px; top: 264px; position: absolute" text="Delivery"/>
+                        <webuijsf:panelLayout id="layoutPanel1" panelLayout="flow" style="height: 70px; left: 0px; top: 0px; position: absolute; width: 694px">
+                            <webuijsf:label id="label1" style="font-family: 'Times New Roman',Times,serif; font-size: XX-large" text="PNMS"/>
+                        </webuijsf:panelLayout>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

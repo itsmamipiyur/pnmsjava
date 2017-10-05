@@ -53,6 +53,18 @@
             <from-outcome>dishPage</from-outcome>
             <to-view-id>/pages/DishPage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>cateringPackagePage</from-outcome>
+            <to-view-id>/pages/CateringPackagePage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>rentalPackagePage</from-outcome>
+            <to-view-id>/pages/RentalPackagePage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>deliveryPage</from-outcome>
+            <to-view-id>/pages/DeliveryPage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>pages$ItemPage</managed-bean-name>
@@ -118,16 +130,6 @@
             <to-view-id>/pages/NewEventTypePage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <managed-bean>
-        <managed-bean-name>pages$DecorPage</managed-bean-name>
-        <managed-bean-class>capstoneprojectwar.pages.DecorPage</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>pages$NewDecor</managed-bean-name>
-        <managed-bean-class>capstoneprojectwar.pages.NewDecor</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
     <navigation-rule>
         <from-view-id>/pages/DecorPage.jsp</from-view-id>
         <navigation-case>
@@ -190,4 +192,60 @@
             <to-view-id>/pages/DishPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>pages$CateringPackagePage</managed-bean-name>
+        <managed-bean-class>capstoneprojectwar.pages.CateringPackagePage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>pages$RentalPackagePage</managed-bean-name>
+        <managed-bean-class>capstoneprojectwar.pages.RentalPackagePage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>pages$NewCateringPackage</managed-bean-name>
+        <managed-bean-class>capstoneprojectwar.pages.NewCateringPackage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>pages$NewRentalPackage</managed-bean-name>
+        <managed-bean-class>capstoneprojectwar.pages.NewRentalPackage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>pages$NewDelivery</managed-bean-name>
+        <managed-bean-class>capstoneprojectwar.pages.NewDelivery</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/pages/CateringPackagePage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>newCateringPackage</from-outcome>
+            <to-view-id>/pages/NewCateringPackage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/pages/RentalPackagePage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>newRentalPackage</from-outcome>
+            <to-view-id>/pages/NewRentalPackage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/pages/DeliveryPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>newDelivery</from-outcome>
+            <to-view-id>/pages/NewDelivery.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>pages$DecorPage</managed-bean-name>
+        <managed-bean-class>capstoneprojectwar.pages.DecorPage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>pages$NewDecor</managed-bean-name>
+        <managed-bean-class>capstoneprojectwar.pages.NewDecor</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>

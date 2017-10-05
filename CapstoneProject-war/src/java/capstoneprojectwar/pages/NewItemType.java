@@ -5,11 +5,18 @@
 
 package capstoneprojectwar.pages;
 
+import CapstoneProject.entity.ItemType;
+import CapstoneProject.session.ItemTypeFacadeLocal;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.TextField;
+import javax.ejb.EJB;
 import javax.faces.FacesException;
 import capstoneprojectwar.SessionBean1;
 import capstoneprojectwar.RequestBean1;
 import capstoneprojectwar.ApplicationBean1;
+import java.util.Date;
+import java.util.List;
+import javax.ejb.EJBException;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -24,6 +31,8 @@ import capstoneprojectwar.ApplicationBean1;
  */
 
 public class NewItemType extends AbstractPageBean {
+    @EJB
+    private ItemTypeFacadeLocal itemTypeFacade;
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -32,6 +41,24 @@ public class NewItemType extends AbstractPageBean {
      * here is subject to being replaced.</p>
      */
     private void _init() throws Exception {
+    }
+    private TextField textField1 = new TextField();
+
+    public TextField getTextField1() {
+        return textField1;
+    }
+
+    public void setTextField1(TextField tf) {
+        this.textField1 = tf;
+    }
+    private TextField txtID = new TextField();
+
+    public TextField getTxtID() {
+        return txtID;
+    }
+
+    public void setTxtID(TextField tf) {
+        this.txtID = tf;
     }
 
     // </editor-fold>
@@ -99,6 +126,11 @@ public class NewItemType extends AbstractPageBean {
      */
     @Override
     public void prerender() {
+        List<ItemType> itemTypeList = this.itemTypeFacade.findAll();
+        ItemType itemType = itemTypeList.get(itemTypeList.size() - 1);
+        String id = SmartCounter.generate(itemType.getItemTypeCode());
+        this.txtID.setText(id);
+        
     }
 
     /**
@@ -149,6 +181,32 @@ public class NewItemType extends AbstractPageBean {
     public String btnSubmit_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
+        String name = "";
+        String code = (String) this.txtID.getText();
+        Date dt = new Date();
+
+        SessionBean1 sb1 = this.getSessionBean1();
+        try{
+            
+            name = (String) textField1.getText();
+            System.out.print(name);
+            ItemType itemType = new ItemType();
+            itemType.setItemTypeCode(code);
+            itemType.setItemTypeName(name);
+            itemType.setCreatedAt(dt);
+            itemType.setUpdatedAt(dt);
+            this.itemTypeFacade.create(itemType);
+
+
+            this.info("Success");
+
+
+        }catch(NullPointerException e){
+            this.info("Failed");
+        }catch (EJBException ex){
+            this.info("Name already exists; or");
+            this.info("Please try again.");
+        }
         return null;
     }
     

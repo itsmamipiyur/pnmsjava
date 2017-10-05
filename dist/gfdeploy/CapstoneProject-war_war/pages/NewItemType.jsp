@@ -16,11 +16,14 @@
                     <webuijsf:form id="form1">
                         <webuijsf:staticText id="staticText1" style="font-size: 24px; font-weight: bold; left: 408px; top: 144px; position: absolute" text="NEW ITEM TYPE"/>
                         <webuijsf:label id="label1" requiredIndicator="true" style="left: 288px; top: 216px; position: absolute" text="Name:"/>
-                        <webuijsf:textField columns="50" id="textField1" style="left: 360px; top: 216px; position: absolute"/>
+                        <webuijsf:textField binding="#{pages$NewItemType.textField1}" columns="50" id="textField1" style="left: 360px; top: 216px; position: absolute"/>
                         <webuijsf:button actionExpression="#{pages$NewItemType.btnSubmit_action}" id="btnSubmit"
                             style="height: 24px; left: 407px; top: 288px; position: absolute; width: 71px" text="Submit"/>
                         <webuijsf:button actionExpression="#{pages$NewItemType.btnBack_action}" id="btnBack"
                             style="height: 24px; left: 503px; top: 288px; position: absolute; width: 72px" text="Back"/>
+                        <webuijsf:messageGroup id="messageGroup1" style="left: 120px; top: 120px; position: absolute"/>
+                        <webuijsf:textField binding="#{pages$NewItemType.txtID}" disabled="true" id="txtID" style="left: 384px; top: 192px; position: absolute"/>
+                        <webuijsf:label id="label2" style="left: 288px; top: 192px; position: absolute" text="Code:"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

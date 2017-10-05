@@ -16,13 +16,13 @@
                     <webuijsf:form id="form1">
                         <webuijsf:staticText id="staticText1" style="font-size: 24px; font-weight: bold; left: 360px; top: 144px; position: absolute" text="NEW EVENT TYPE"/>
                         <webuijsf:label id="label1" requiredIndicator="true" style="left: 240px; top: 216px; position: absolute" text="Name:"/>
-                        <webuijsf:textField columns="50" id="textField1" style="left: 336px; top: 216px; position: absolute"/>
+                        <webuijsf:textField binding="#{pages$NewEventTypePage.textField1}" columns="50" id="textField1" style="left: 336px; top: 216px; position: absolute"/>
                         <webuijsf:button actionExpression="#{pages$NewEventTypePage.btnSubmit_action}" id="btnSubmit"
                             style="height: 24px; left: 383px; top: 336px; position: absolute; width: 71px" text="Submit"/>
                         <webuijsf:button actionExpression="#{pages$NewEventTypePage.btnBack_action}" id="btnBack"
                             style="height: 24px; left: 479px; top: 336px; position: absolute; width: 72px" text="Back"/>
                         <webuijsf:label id="label2" requiredIndicator="true" style="left: 240px; top: 240px; position: absolute" text="Description"/>
-                        <webuijsf:textArea columns="50" id="textArea1" rows="4" style="left: 336px; top: 240px; position: absolute"/>
+                        <webuijsf:textArea binding="#{pages$NewEventTypePage.textArea1}" columns="50" id="textArea1" rows="4" style="left: 336px; top: 240px; position: absolute"/>
                         <webuijsf:label id="label3" style="position: absolute; left: 240px; top: 192px" text="Code:"/>
                         <webuijsf:textField binding="#{pages$NewEventTypePage.txtID}" disabled="true" id="txtID" style="left: 336px; top: 192px; position: absolute"/>
                     </webuijsf:form>

@@ -5,10 +5,14 @@
 
 package capstoneprojectwar.pages;
 
+import CapstoneProject.entity.Dish;
 import CapstoneProject.entity.DishType;
+import CapstoneProject.session.DishFacadeLocal;
 import CapstoneProject.session.DishTypeFacadeLocal;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.DropDown;
+import com.sun.webui.jsf.component.TextArea;
+import com.sun.webui.jsf.component.TextField;
 import com.sun.webui.jsf.model.SingleSelectOptionsList;
 import javax.ejb.EJB;
 import javax.faces.FacesException;
@@ -17,7 +21,9 @@ import capstoneprojectwar.ApplicationBean1;
 import capstoneprojectwar.RequestBean1;
 import com.sun.webui.jsf.model.Option;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import javax.ejb.EJBException;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -33,7 +39,10 @@ import java.util.List;
 
 public class NewDish extends AbstractPageBean {
     @EJB
+    private DishFacadeLocal dishFacade;
+    @EJB
     private DishTypeFacadeLocal dishTypeFacade;
+
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -60,6 +69,42 @@ public class NewDish extends AbstractPageBean {
 
     public void setDdDishType(DropDown dd) {
         this.ddDishType = dd;
+    }
+    private TextField textField1 = new TextField();
+
+    public TextField getTextField1() {
+        return textField1;
+    }
+
+    public void setTextField1(TextField tf) {
+        this.textField1 = tf;
+    }
+    private TextArea textArea1 = new TextArea();
+
+    public TextArea getTextArea1() {
+        return textArea1;
+    }
+
+    public void setTextArea1(TextArea ta) {
+        this.textArea1 = ta;
+    }
+    private TextField textField2 = new TextField();
+
+    public TextField getTextField2() {
+        return textField2;
+    }
+
+    public void setTextField2(TextField tf) {
+        this.textField2 = tf;
+    }
+    private TextField txtID = new TextField();
+
+    public TextField getTxtID() {
+        return txtID;
+    }
+
+    public void setTxtID(TextField tf) {
+        this.txtID = tf;
     }
 
     // </editor-fold>
@@ -127,6 +172,13 @@ public class NewDish extends AbstractPageBean {
      */
     @Override
     public void prerender() {
+        List<Dish> dishList = this.dishFacade.findAll();
+        Dish dish = dishList.get(dishList.size() - 1);
+        String id = SmartCounter.generate(dish.getDishCode());
+        this.txtID.setText(id);
+
+
+
         List<DishType> dishTypeList = this.dishTypeFacade.findAllActive();
         List<Option> optionList = new ArrayList<Option>();
 
@@ -183,7 +235,35 @@ public class NewDish extends AbstractPageBean {
     public String btnSubmit_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
+        String name = "";
+        String desc = (String) this.textArea1.getText();
+        String code = (String) this.txtID.getText();
+        String disht = (String) this.ddDishType.getValue().toString();
+        Date dt = new Date();
+
+        try{
+            name = (String) this.textField1.getText();
+            System.out.print(disht);
+            Dish dish = new Dish();
+            dish.setDishCode(code);
+            dish.setDishName(name);
+            dish.setDishDesc(desc);
+//            dish.setDishTypeCode(disht);
+            dish.setCreatedAt(dt);
+            dish.setUpdatedAt(dt);
+            this.dishFacade.create(dish);
+
+            this.info("Created successfully.");
+            this.textField1.setText("");
+            this.textArea1.setText("");
+        }catch (NullPointerException e){
+            this.info("Fields with * are mandatory.");
+        }catch (EJBException ex){
+            this.info("Name already exists; or");
+            this.info("Please try again.");
+        }
         return null;
+
     }
 
     public String btnBack_action() {
@@ -191,6 +271,7 @@ public class NewDish extends AbstractPageBean {
         // case name where null will return to the same page.
         return "dishPage";
     }
+
     
 }
 
